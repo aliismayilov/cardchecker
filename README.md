@@ -17,4 +17,9 @@ Small ruby program that validates card numbers against:
 2. Submit card number
 
 
+**Test**
+
+Tests are written for RSpec.
+
+
 Small test for HE:labs.

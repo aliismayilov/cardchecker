@@ -60,36 +60,28 @@ describe Card do
       pending("complete type and luhn_valid tests")
 
       card = Card.new('4111111111111111')
-      output.should_receive(:puts).with('VISA: 4111111111111111       (valid)')
-      card.output
+      card.output.should eql('VISA: 4111111111111111       (valid)')
 
       card = Card.new('4111111111111')
-      output.should_receive(:puts).with('VISA: 4111111111111          (invalid)')
-      card.output
+      card.output.should eql('VISA: 4111111111111          (invalid)')
 
       card = Card.new('4012888888881881')
-      output.should_receive(:puts).with('VISA: 4012888888881881       (valid)')
-      card.output
+      card.output.should eql('VISA: 4012888888881881       (valid)')
 
       card = Card.new('378282246310005')
-      output.should_receive(:puts).with('AMEX: 378282246310005        (valid)')
-      card.output
+      card.output.should eql('AMEX: 378282246310005        (valid)')
 
       card = Card.new('6011111111111117')
-      output.should_receive(:puts).with('Discover: 6011111111111117   (valid)')
-      card.output
+      card.output.should eql('Discover: 6011111111111117   (valid)')
 
       card = Card.new('5105105105105100')
-      output.should_receive(:puts).with('MasterCard: 5105105105105100 (valid)')
-      card.output
+      card.output.should eql('MasterCard: 5105105105105100 (valid)')
 
       card = Card.new('5105105105105106')
-      output.should_receive(:puts).with('MasterCard: 5105105105105106 (invalid)')
-      card.output
+      card.output.should eql('MasterCard: 5105105105105106 (invalid)')
 
       card = Card.new('9111111111111111')
-      output.should_receive(:puts).with('Unknown: 9111111111111111    (invalid)')
-      card.output
+      card.output.should eql('Unknown: 9111111111111111    (invalid)')
     end
   end
 end

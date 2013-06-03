@@ -10,7 +10,7 @@ class Runner
   end
 
   def check(number)
-    card = Card.new(number)
+    card = Card.new(number.gsub(/\s+/, ""))
     @output.puts card.output
   end
 end

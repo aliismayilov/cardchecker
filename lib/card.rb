@@ -24,4 +24,25 @@ class Card
       return 'Unknown'
     end
   end
+
+  def luhn_valid?
+    def digit_sum(digit_string)
+      sum = 0
+      digit_string.each_char do |d|
+        sum += d.to_i
+      end
+      sum
+    end
+
+    digit_string = ''
+    (0..(@number.length - 1)).each do |index|
+      if index % 2 == 0
+        digit_string += (@number[index].to_i * 2).to_s
+      else
+        digit_string += @number[index]
+      end
+    end
+
+    digit_sum(digit_string) % 10 == 0
+  end
 end

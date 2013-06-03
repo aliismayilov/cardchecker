@@ -10,5 +10,5 @@ while number = gets.chomp
   if number == 'exit' or number == 'quit'
     break
   end
-  runner.check(Card.new(number))
+  runner.check(number)
 end

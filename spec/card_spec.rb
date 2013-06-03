@@ -17,9 +17,9 @@ describe Card do
       card.type.should == 'MasterCard'
     end
 
-    it "returns 'Visa' when number begins with 4 and the length is 13 or 16" do
+    it "returns 'VISA' when number begins with 4 and the length is 13 or 16" do
       card = Card.new('4111111111111111')
-      card.type.should == 'Visa'
+      card.type.should == 'VISA'
     end
 
     it "returns 'Unknown' for all other cases" do

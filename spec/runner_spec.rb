@@ -7,7 +7,7 @@ describe Runner do
   describe "#start" do
     it "prompts user for input" do
       output.should_receive(:puts).with('Enter card number:')
-      card.start
+      runner.start
     end
   end
 end

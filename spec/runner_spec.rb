@@ -1,5 +1,4 @@
 require "runner"
-require "card"
 
 describe Runner do
   let(:output)  { double('output').as_null_object }
@@ -14,9 +13,8 @@ describe Runner do
 
   describe "#check" do
     it "should output card validation" do
-      card = Card.new('4111111111111111')
       output.should_receive(:puts).with('VISA: 4111111111111111       (valid)')
-      runner.check(card)
+      runner.check('4111111111111111')
     end
   end
 end

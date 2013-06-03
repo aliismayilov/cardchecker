@@ -55,6 +55,6 @@ class Card
   end
 
   def output
-    "%-28s (#{self.valid?})" % (self.type + ': ' + @number)
+    "%-28s (#{self.valid?})" % "#{self.type}: #{@number}"
   end
 end

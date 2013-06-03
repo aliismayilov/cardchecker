@@ -20,6 +20,3 @@ Small ruby program that validates card numbers against:
 **Test**
 
 Tests are written for RSpec.
-
-
-Small test for HE:labs.

@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require "runner"
+require "card"
+
+runner = Runner.new(STDOUT)
+at_exit { puts "bye!"}
+runner.start
+while number = gets.chomp
+  if number == 'exit' or number == 'quit'
+    break
+  end
+  runner.check(Card.new(number))
+end

@@ -1,3 +1,5 @@
+require "card"
+
 class Runner
   def initialize(output)
     @output = output
@@ -7,7 +9,8 @@ class Runner
     @output.puts 'Enter card number:'
   end
 
-  def check(card)
+  def check(number)
+    card = Card.new(number)
     @output.puts card.output
   end
 end

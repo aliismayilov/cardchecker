@@ -36,9 +36,6 @@ describe Card do
       card = Card.new('4012888888881881')
       card.luhn_valid?.should be_true
 
-      card = Card.new('378282246310005')
-      card.luhn_valid?.should be_true
-
       card = Card.new('6011111111111117')
       card.luhn_valid?.should be_true
 
@@ -51,6 +48,9 @@ describe Card do
       card.luhn_valid?.should be_false
 
       card = Card.new('5105105105105106')
+      card.luhn_valid?.should be_false
+
+      card = Card.new('378282246310005')
       card.luhn_valid?.should be_false
     end
   end
@@ -69,7 +69,7 @@ describe Card do
       card.output.should eql('VISA: 4012888888881881       (valid)')
 
       card = Card.new('378282246310005')
-      card.output.should eql('AMEX: 378282246310005        (valid)')
+      card.output.should eql('AMEX: 378282246310005        (invalid)')
 
       card = Card.new('6011111111111117')
       card.output.should eql('Discover: 6011111111111117   (valid)')

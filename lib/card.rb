@@ -18,7 +18,7 @@ class Card
 
     # begins with 4 and the length is 13 or 16
     elsif @number[0,1] == '4' and (@number.length == 13 or @number.length == 16)
-      return 'Visa'
+      return 'VISA'
 
     else
       return 'Unknown'
@@ -44,5 +44,17 @@ class Card
     end
 
     digit_sum(digit_string) % 10 == 0
+  end
+
+  def valid?
+    if self.type != 'Unknown' and self.luhn_valid?
+      'valid'
+    else
+      'invalid'
+    end
+  end
+
+  def output
+    "%-28s (#{self.valid?})" % (self.type + ': ' + @number)
   end
 end

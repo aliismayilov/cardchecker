@@ -57,8 +57,6 @@ describe Card do
 
   describe "#output" do
     it "outputs formatted result of sanity check over card number" do
-      pending("complete type and luhn_valid tests")
-
       card = Card.new('4111111111111111')
       card.output.should eql('VISA: 4111111111111111       (valid)')
 

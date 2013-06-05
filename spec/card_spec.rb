@@ -4,27 +4,27 @@ describe Card do
   describe "#type" do
     it "returns 'AMEX' when number begins with 34 or 37 and the length is 15" do
       card = Card.new('378282246310005')
-      card.type.should == 'AMEX'
+      card.type.should == :AMEX
     end
 
     it "returns 'Discover' when number begins with 6011 and the length is 16" do
       card = Card.new('6011111111111117')
-      card.type.should == 'Discover'
+      card.type.should == :Discover
     end
 
     it "returns 'MasterCard' when number begins with 51 or 55 and the length is 16" do
       card = Card.new('5105105105105100')
-      card.type.should == 'MasterCard'
+      card.type.should == :MasterCard
     end
 
     it "returns 'VISA' when number begins with 4 and the length is 13 or 16" do
       card = Card.new('4111111111111111')
-      card.type.should == 'VISA'
+      card.type.should == :VISA
     end
 
     it "returns 'Unknown' for all other cases" do
       card = Card.new('9111111111111111')
-      card.type.should == 'Unknown'
+      card.type.should == :Unknown
     end
   end
 

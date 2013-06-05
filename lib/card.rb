@@ -15,22 +15,22 @@ class Card
   def type
     # begins with 34 or 37 and the length is 15
     if begins_with?(%w{34 37}) and @number.length == 15
-      return 'AMEX'
+      return :AMEX
 
     # begins with 6011 and the length is 16
     elsif begins_with?(%w{6011}) and @number.length == 16
-      return 'Discover'
+      return :Discover
 
     # begins with 51 or 55 and the length is 16
     elsif begins_with?(%w{51 55}) and @number.length == 16
-      return 'MasterCard'
+      return :MasterCard
 
     # begins with 4 and the length is 13 or 16
     elsif begins_with?(%w{4}) and (@number.length == 13 or @number.length == 16)
-      return 'VISA'
+      return :VISA
 
     else
-      return 'Unknown'
+      return :Unknown
     end
   end
 

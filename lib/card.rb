@@ -52,7 +52,9 @@ class Card
       end
     end
 
-    digit_sum(digit_string) % 10 == 0
+    checksum = digit_sum(digit_string)
+
+    checksum % 10 == 0 and checksum != 0
   end
 
   def valid?

@@ -56,7 +56,7 @@ class Card
   end
 
   def valid?
-    if self.type != 'Unknown' and self.luhn_valid?
+    if self.type != :Unknown and self.luhn_valid?
       'valid'
     else
       'invalid'

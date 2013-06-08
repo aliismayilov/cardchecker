@@ -12,3 +12,4 @@ while number = gets.chomp
   end
   runner.check(number)
 end
+

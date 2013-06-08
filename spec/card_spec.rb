@@ -63,7 +63,8 @@ describe Card do
       ['6011111111111117',  'Discover: 6011111111111117   (valid)'],
       ['5105105105105100',  'MasterCard: 5105105105105100 (valid)'],
       ['5105105105105106',  'MasterCard: 5105105105105106 (invalid)'],
-      ['9111111111111111',  'Unknown: 9111111111111111    (invalid)']
+      ['9111111111111111',  'Unknown: 9111111111111111    (invalid)'],
+      ['string',            'Unknown: string              (invalid)']
     ].each do |number, result|
       it "outputs formatted result of sanity check over card number" do
         card = Card.new(number)

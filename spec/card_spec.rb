@@ -45,6 +45,8 @@ describe Card do
       4111111111111
       5105105105105106
       378282246310005
+      string
+      0
     }.each do |number|
       it "returns false when submitted number is validated by Luhn algorithm" do
         card = Card.new(number)
